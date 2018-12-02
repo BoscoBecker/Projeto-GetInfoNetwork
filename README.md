@@ -1,4 +1,4 @@
-# Programa busca todos os dispositivos conectado na rede Windows via Ethernet ou wifi
+# Programa que lista todos os dispositivos conectado na rede Windows via Ethernet ou wifi
 
 Nesse aplicativo te permite localizar o Nome do PC, IP e MAC, salvando em um arquivo ".txt".
 
@@ -44,5 +44,5 @@ sendo assim, facilitando a coleta de todas as informações via software.
 ```
 
 
-# boscobecker Feito com <3	 
+## boscobecker Feito com <3	 
 
