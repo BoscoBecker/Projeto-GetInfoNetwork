@@ -1,48 +1,47 @@
-# Programa que lista todos os dispositivos conectado na rede Windows via Ethernet ou wifi
+# Program that lists all devices connected to the Windows network via Ethernet or wifi
 
-Nesse aplicativo te permite localizar o Nome do PC, IP e MAC, salvando em um arquivo ".txt".
+This application allows you to find the PC Name, IP and MAC, saving it in a ".txt" file.
 
-## Fundamentação
+## Rationale
 
-Houve a necessidade de se obter MAC e IP's de uma determinada situação, com vários PC's no ambiente,
-sendo assim, facilitando a coleta de todas as informações via software.
+There was a need to obtain MACs and IPs for a given situation, with several PCs in the environment,
+therefore, facilitating the collection of all information via software.
 
-## Caractrísticas
+## Features
 
-* Simples,
-* Usa API do WIndows,
-* Leve, < 15 MB,
-* Caso tenha rede diferentes, basta fazer a troca da rede via (porta "VLAN") no Switch;
+* Simple,
+* Uses WIndows API,
+* Light, <15MB,
+* If you have a different network, just change the network via ("VLAN" port) on the Switch;
 
-## Requisitos
+## Requirements
 
-* Em certos casos, deve desabilitar o Firewall da máquina.
-* Conexão TCP/IP válida com IP válido.
-* Máquinas com conexão ativa(conectado/ligada)
-* Funciona apenas com Gateway usando DHCP (Automático), isto é com atribuições de ips automáticas.
+* In certain cases, you must disable the machine's Firewall.
+* Valid TCP / IP connection with valid IP.
+* Machines with active connection (connected / connected)
+* Works only with Gateway using DHCP (Automatic), that is, with automatic ips assignments.
 
 
-## Funcionamento do programa
+## Program operation
 
-É realizada via API do windows manipulações de comnandos de rede via CMD
+Network commands are manipulated via the Windows API via CMD
 
-* 1ª Etapa: Gera um comando NET VIEW para listar todos os dispositivo (pelo nome).
-  Me retorna o nome dos dispositivos na rede.
-* 2ª Etapa: Faz uma busca do IP pelo nome, EX: ping -4 localhost,me retornando um IPV4 válido. 
-  Me retorna o IPV4 do dispositivos na rede.
+* 1st Step: Generates a NET VIEW command to list all devices (by name).
+  Returns me the name of the devices on the network.
+* 2nd Step: Do a search for the IP by name, EX: ping -4 localhost, returning me a valid IPV4.
+  Returns the IPV4 of the devices on the network.
   
-  Exemplo:
-```pascal
-  cmd := 'ping -4 ' + ip;
-```
-	
-* 3ª Etapa: Faz uma consulta na tabela ARP retornando o MAC, EX: arp -a 127.0.0.1, me retornará o MAC do dispositivo
-  Me retorna o MAC do dispositivos na rede.
-  Exemplo:
-```pascal 
- cmd := 'arp -a ' + ip;
-```
+  Example:
+`` pascal
+  cmd: = 'ping -4' + ip;
+``
+
+* 3rd Step: Make a query in the ARP table returning the MAC, EX: arp -a 127.0.0.1, the MAC of the device will return to me
+  Returns me the MAC of the devices on the network.
+  Example:
+`` pascal
+ cmd: = 'arp -a' + ip;
+``
 
 
-## boscobecker Feito com <3	 
-
+Make with ❤ @boscobecker
